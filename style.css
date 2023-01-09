@@ -1,0 +1,12 @@
+.box{
+    display: inline-block;
+    padding: 100px 0;
+    width: 400px;
+    background: #ddd;
+    margin: 20px;
+    text-align: center;
+}
+
+li.fav{
+    background: yellow;
+}

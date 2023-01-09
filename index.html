@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>Hello Vue :)</h1>
+<div id="app">
+
+    <a :href="url">onet</a>
+    <div v-if="showBooks">
+        <ul>
+            <li v-for="book in books" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+                <h3>{{ book.title }}</h3>
+                <p>{{ book.author }}</p>
+            </li>
+        </ul>
+        <ul>
+            <li v-for="book in filterBooks" @click="toggleFav(book)">
+                <h3>{{ book.title }}</h3>
+                <p>{{ book.author }}</p>
+            </li>
+        </ul>
+    </div>
+
+    <button @click="toggleShowBooks">
+        <span v-if="showBooks">hide books</span>
+        <span v-else>show books</span>
+    </button>
+
+    <div v-show="showBooks">obecna biblioteka</div>
+
+    <br>
+
+    <div class="box" @mouseover="handleEvents($event, 5)">mouse over</div>
+    <div class="box" @mouseleave="handleEvents">mouse live</div>
+    <div class="box" @dblclick="handleEvents">dubble click</div>
+    <div class="box" @mousemove="handeMouseMove">position: {{ x }} - {{ y }}</div>
+
+</div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
